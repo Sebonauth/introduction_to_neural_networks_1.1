@@ -3,75 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Big Picture: The Rise of Neural Networks</title>
+    <title>The Rise of Neural Networks: From Perceptrons to Deep Learning</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5;
-            color: #333;
+            font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff; /* Updated background color */
+            background-color: #ffffff;
+            font-size: 150%;
         }
-        .card {
-            background-color: #ffffff; /* Updated background color */
-            border-radius: 8px;
-            /* Removed box-shadow */
-            overflow: hidden;
-        }
-        .card-header img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        .card-content {
+        section {
+            margin-bottom: 20px;
             padding: 20px;
+            background-color: #ffffff;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
         }
         h1 {
-            color: #2c5282;
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
+            color: #333;
+            margin-top: 20px;
         }
         p {
-            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 20px;
         }
-        @media (max-width: 640px) {
-            body {
-                padding: 10px;
-            }
-            h1 {
-                font-size: 1.75rem;
-            }
-            h2 {
-                font-size: 1.25rem;
-            }
+        .image-placeholder {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .continue-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            color: #ffffff;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="card-header">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-tW7uxMAAszaDpqp4KPODYHmGF9dhUm.svg" alt="Neural network transforming from a simple perceptron to a modern deep network, illustrating the evolution of neural networks over time" width="600" height="400">
+    <section id="section1">
+        
+        <div class="image-placeholder">
+            <img src="/placeholder.svg?height=400&width=800" alt="A neural network transforming from a simple perceptron to a modern deep network, illustrating the evolution of neural networks over time">
         </div>
-        <div class="card-content">
-            <!--<h1>The Big Picture</h1>-->
-            <h2>The Rise of Neural Networks: From Perceptrons to Deep Learning</h2>
-            <p>
-                Picture yourself in 2012 at the world's most prestigious computer vision competition. Researchers from around the globe have gathered to see who has built the best system for recognizing objects in images. The tension is palpable as the results are announced. Suddenly, the room goes quiet. A team from Toronto has just blown away the competition, achieving an error rate almost half that of their nearest competitor.
-            </p>
-            <p>
-                Their secret? A neural network they called 'AlexNet'.
-            </p>
-            <p>
-                This moment marked the beginning of a revolution in artificial intelligence. But to understand why it was so revolutionary, we need to go back in time. Way back.
-            </p>
-        </div>
-    </div>
+
+        <h1>The Rise of Neural Networks: From Perceptrons to Deep Learning</h1>
+
+        <p>Picture yourself in 2012 at the world's most prestigious computer vision competition. Researchers from around the globe have gathered to see who has built the best system for recognizing objects in images. The tension is palpable as the results are announced. Suddenly, the room goes quiet. A team from Toronto has just blown away the competition, achieving an error rate almost half that of their nearest competitor.</p>
+
+        <p>Their secret? A neural network they called 'AlexNet'.</p>
+
+        <p>This moment marked the beginning of a revolution in artificial intelligence. But to understand why it was so revolutionary, we need to go back in time. Way back.</p>
+
+    </section>
+
+    <script>
+        // Show the first section initially
+        document.getElementById("section1").style.display = "block";
+        document.getElementById("section1").style.opacity = "1";
+
+        // Function to show the next section with fade-in and then scroll to it
+        function showNextSection(nextSectionId) {
+            const currentButton = event.target;
+            const nextSection = document.getElementById("section" + nextSectionId);
+            
+            // Hide the clicked button
+            currentButton.style.display = "none";
+            
+            // Show the next section with a fade-in effect
+            nextSection.style.display = "block";
+            setTimeout(() => {
+                nextSection.style.opacity = "1";
+            }, 10);
+
+            // Scroll to the new section after it fades in
+            setTimeout(() => {
+                nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 500);
+        }
+    </script>
 </body>
 </html>
